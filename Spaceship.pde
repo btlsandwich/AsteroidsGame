@@ -2,19 +2,19 @@ class Spaceship extends Floater
 {   
     public void setX(int x)
     {
-        
+        myCenterX = x;
     }
     public void setY(int y)
     {
-      
+        myCenterY = y;
     }
     public int getX()
     {
-      return xCorners;
+      
     {
     public int getY()
     {
-      return yCorners;
+      
     }
     public void setDirectionX(double x)
     {
