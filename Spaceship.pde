@@ -1,45 +1,17 @@
 class Spaceship extends Floater  
 {   
-    public void setX(int x)
-    {
-        myCenterX = x;
-    }
-    public void setY(int y)
-    {
-        myCenterY = y;
-    }
-    public int getX()
-    {
-      
-    {
-    public int getY()
-    {
-      
-    }
-    public void setDirectionX(double x)
-    {
-      
-    }
-    public void setDirectionY(double y)
-    {
-      
-    }
-    public double getDirectionX()
-    {
-      
-    }
-    public double getDirectionY()
-    {
-      
-    }
-    public void setPointDirection(int degrees)
-    {
-      
-    }
-    public double getPointDirection()
-    {
-      
-    }
+    public void setX(int x) { myCenterX = x; }
+    public void setY(int y) { myCenterY = y; }
+    public int getX() { return myCenterX; }
+    public int getY() { return myCenterY; } 
+    public void setDirectionX(double x) { myDirectionX = x; }
+    public void setDirectionY(double y) { myDirectionY = y; }
+    public double getDirectionX() { return myDirectionX; }
+    public double getDirectionY() { return myDirectionY; }
+    public void setPointDirection(int degrees) { myPointDirection = degrees; }
+    public double getPointDirection() { return myPointDirection; }
+    //color variables
+    
     Spaceship()
     {
        corners = 16;
@@ -93,5 +65,11 @@ class Spaceship extends Floater
        //15
        xCorners[15] = 0;
        yCorners[15] = -2;
+       myCenterX = (int)(Math.random()*500);
+       myCenterY = (int)(Math.random()*500);
+       myDirectionX = 1;
+       myDirectionY = 1;
+       myPointDirection = 0;
+       myColor = color();
     }
 }
