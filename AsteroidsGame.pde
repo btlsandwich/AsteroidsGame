@@ -1,8 +1,9 @@
-Floater[] Kaito;
+Spaceship Kaito;
 public void setup() 
 {
-  Kaito = new Floater[];
-  Kaito[] = new Spaceship();
+  Kaito = new Spaceship();
+  size(600,600);
+  background(0);
 }
 public void draw() 
 {
