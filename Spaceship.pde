@@ -11,8 +11,9 @@ class Spaceship extends Floater
     public void setPointDirection(int degrees) { myPointDirection = degrees; }
     public double getPointDirection() { return myPointDirection; }
     //color variables
-    int myBaseColor, myWingColor, bCorners, cCorners;
-    int[] baseCornersX, baseCornersY, cockpitCornersX, cockpitCornersY;
+    int myBaseColor, myWingColor, bCorners, cCorners, wLCorners, wRCorners;
+    //indexes
+    int[] baseCornersX, baseCornersY, cockpitCornersX, cockpitCornersY, wLCornersX, wLCornersY, wRCornersX, wRCornersY;
     Spaceship()
     {
       //makes body red, corners[] to myWingColor
@@ -20,111 +21,139 @@ class Spaceship extends Floater
        xCorners = new int[corners];
        yCorners = new int[corners];
        //0
-       xCorners[0] = 5*4;
-       yCorners[0] = 0*4;
+       xCorners[0] = 5*5;
+       yCorners[0] = 0*5;
        //1
-       xCorners[1] = 0*4;
-       yCorners[1] = 2*4;
+       xCorners[1] = 0*5;
+       yCorners[1] = 2*5;
        //2
-       xCorners[2] = 1*4;
-       yCorners[2] = 3*4;
+       xCorners[2] = 1*5;
+       yCorners[2] = 3*5;
        //3
-       xCorners[3] = -4*4;
-       yCorners[3] = 4*4;
+       xCorners[3] = -4*5;
+       yCorners[3] = 4*5;
        //4
-       xCorners[4] = -3*4;
-       yCorners[4] = 6*4;
+       xCorners[4] = -3*5;
+       yCorners[4] = 6*5;
        //5
-       xCorners[5] = -6*4;
-       yCorners[5] = 4*4;
+       xCorners[5] = -6*5;
+       yCorners[5] = 4*5;
        //6
-       xCorners[6] = -3*4;
-       yCorners[6] = 2*4;
+       xCorners[6] = -3*5;
+       yCorners[6] = 2*5;
        //7
-       xCorners[7] = -6*4;
-       yCorners[7] = 1*4;
+       xCorners[7] = -6*5;
+       yCorners[7] = 1*5;
        //8
-       xCorners[8] = -5*4;
-       yCorners[8] = 0*4;
+       xCorners[8] = -5*5;
+       yCorners[8] = 0*5;
        //9
-       xCorners[9] = -6*4;
-       yCorners[9] = -1*4;
+       xCorners[9] = -6*5;
+       yCorners[9] = -1*5;
        //10
-       xCorners[10] = -3*4;
-       yCorners[10] = -2*4;
+       xCorners[10] = -3*5;
+       yCorners[10] = -2*5;
        //11
-       xCorners[11] = -6*4;
-       yCorners[11] = -4*4;
+       xCorners[11] = -6*5;
+       yCorners[11] = -4*5;
        //12
-       xCorners[12] = -3*4;
-       yCorners[12] = -6*4;
+       xCorners[12] = -3*5;
+       yCorners[12] = -6*5;
        //13
-       xCorners[13] = -4*4;
-       yCorners[13] = -4*4;
+       xCorners[13] = -4*5;
+       yCorners[13] = -4*5;
        //14
-       xCorners[14] = 1*4;
-       yCorners[14] = -3*4;
+       xCorners[14] = 1*5;
+       yCorners[14] = -3*5;
        //15
-       xCorners[15] = 0*4;
-       yCorners[15] = -2*4;
+       xCorners[15] = 0*5;
+       yCorners[15] = -2*5;
       //makes body white, baseCorners[] to myBaseColor
         bCorners = 8;
         baseCornersX = new int[bCorners];
         baseCornersY = new int[bCorners];
         //0
-        baseCornersX[0] = 5*4;
-        baseCornersY[0] = 0*4;
+        baseCornersX[0] = 5*5;
+        baseCornersY[0] = 0*5;
         //1
-        baseCornersX[1] = 0*4;
-        baseCornersY[1] = 2*4;
+        baseCornersX[1] = 0*5;
+        baseCornersY[1] = 2*5;
         //2
-        baseCornersX[2] = 1*4;
-        baseCornersY[2] = 3*4;
+        baseCornersX[2] = 1*5;
+        baseCornersY[2] = 3*5;
         //3
-        baseCornersX[3] = -6*4;
-        baseCornersY[3] = 1*4;
+        baseCornersX[3] = -6*5;
+        baseCornersY[3] = 1*5;
         //4
-        baseCornersX[4] = -5*4;
-        baseCornersY[4] = 0*4;
+        baseCornersX[4] = -5*5;
+        baseCornersY[4] = 0*5;
         //5
-        baseCornersX[5] = -6*4;
-        baseCornersY[5] = -1*4;
+        baseCornersX[5] = -6*5;
+        baseCornersY[5] = -1*5;
         //6
-        baseCornersX[6] = 1*4;
-        baseCornersY[6] = -3*4;
+        baseCornersX[6] = 1*5;
+        baseCornersY[6] = -3*5;
         //7
-        baseCornersX[7] = 0*4;
-        baseCornersY[7] = -2*4;
+        baseCornersX[7] = 0*5;
+        baseCornersY[7] = -2*5;
       //makes body blue, cockpitCorners[] to myColor
         cCorners = 6;
         cockpitCornersX = new int[cCorners];
         cockpitCornersY = new int[cCorners];
         //0
-        cockpitCornersX[0] = 2*4;
-        cockpitCornersY[0] = 0*4;
+        cockpitCornersX[0] = 2*5;
+        cockpitCornersY[0] = 0*5;
         //1
-        cockpitCornersX[1] = 0*4;
-        cockpitCornersY[1] = 1*4;
+        cockpitCornersX[1] = 0*5;
+        cockpitCornersY[1] = 1*5;
         //2
-        cockpitCornersX[2] = -2*4;
-        cockpitCornersY[2] = 1*4;
+        cockpitCornersX[2] = -2*5;
+        cockpitCornersY[2] = 1*5;
         //3
-        cockpitCornersX[3] = -4*4;
-        cockpitCornersY[3] = 0*4;
+        cockpitCornersX[3] = -4*5;
+        cockpitCornersY[3] = 0*5;
         //4
-        cockpitCornersX[4] = -2*4;
-        cockpitCornersY[4] = -1*4;
+        cockpitCornersX[4] = -2*5;
+        cockpitCornersY[4] = -1*5;
         //5
-        cockpitCornersX[5] = 0*4;
-        cockpitCornersY[5] = -1*4;
-       myCenterX = (int)(Math.random()*500);
-       myCenterY = (int)(Math.random()*500);
+        cockpitCornersX[5] = 0*5;
+        cockpitCornersY[5] = -1*5;
+      //left wing
+        wLCorners = 3;
+        wLCornersX = new int[wLCorners];
+        wLCornersY = new int[wLCorners];
+        //0
+        wLCornersX[0] = -3*5;
+        wLCornersY[0] = 6*5;
+        //1
+        wLCornersX[1] = -6*5;
+        wLCornersY[1] = 4*5;
+        //2
+        wLCornersX[2] = -4*5;
+        wLCornersY[2] = 4*5;
+      //right wing
+        wRCorners = 3;
+        wRCornersX = new int[wRCorners];
+        wRCornersY = new int[wRCorners];
+        //0
+        wRCornersX[0] = -3*5;
+        wRCornersY[0] = -6*5;
+        //1
+        wRCornersX[1] = -6*5;
+        wRCornersY[1] = -4*5;
+        //2
+        wRCornersX[2] = -4*5;
+        wRCornersY[2] = -4*5; 
+        myCenterX = 300;
+        myCenterY = 300;
+       //myCenterX = (int)(Math.random()*500);
+       //myCenterY = (int)(Math.random()*500);
        myDirectionX = 1;
        myDirectionY = 1;
        myPointDirection = 0;
        //color intialization
-       myColor = color(50,0,250);
-       myWingColor = color(255,0,0);
+       myColor = color(50,0,150);
+       myWingColor = color(215,0,0);
        myBaseColor = color(255,255,255);
     }
     public void show()
@@ -150,6 +179,20 @@ class Spaceship extends Floater
       for (int nJ = 0; nJ < bCorners; nJ++)
       {
         vertex(baseCornersX[nJ], baseCornersY[nJ]);
+      }
+      endShape(CLOSE);
+      //wing tips left side
+      beginShape();
+      for (int nL = 0; nL < wLCorners; nL++) 
+      {
+        vertex(wLCornersX[nL], wLCornersY[nL]);
+      }
+      endShape(CLOSE);
+      //wing tips right side
+      beginShape();
+      for (int nM = 0; nM < wRCorners; nM++) 
+      {
+        vertex(wRCornersX[nM], wRCornersY[nM]);
       }
       endShape(CLOSE);
       // float dRadians = (float)(myPointDirection*(Math.PI/180));
