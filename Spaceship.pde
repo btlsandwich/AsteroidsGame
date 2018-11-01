@@ -13,7 +13,8 @@ class Spaceship extends Floater
     //color variables
     int myBaseColor, myWingColor, bCorners, cCorners, wLCorners, wRCorners;
     //indexes
-    int[] baseCornersX, baseCornersY, cockpitCornersX, cockpitCornersY, wLCornersX, wLCornersY, wRCornersX, wRCornersY;
+    int[] baseCornersX, baseCornersY, cockpitCornersX, cockpitCornersY;
+    float[] wLCornersX, wLCornersY, wRCornersX, wRCornersY;
     Spaceship()
     {
       //makes body red, corners[] to myWingColor
@@ -120,36 +121,36 @@ class Spaceship extends Floater
         cockpitCornersY[5] = -1*5;
       //left wing
         wLCorners = 3;
-        wLCornersX = new int[wLCorners];
-        wLCornersY = new int[wLCorners];
+        wLCornersX = new float[wLCorners];
+        wLCornersY = new float[wLCorners];
         //0
         wLCornersX[0] = -3*5;
         wLCornersY[0] = 6*5;
         //1
         wLCornersX[1] = -6*5;
-        wLCornersY[1] = 4*5;
+        wLCornersY[1] = 4.35*5;
         //2
         wLCornersX[2] = -4*5;
-        wLCornersY[2] = 4*5;
+        wLCornersY[2] = 4.35*5;
       //right wing
         wRCorners = 3;
-        wRCornersX = new int[wRCorners];
-        wRCornersY = new int[wRCorners];
+        wRCornersX = new float[wRCorners];
+        wRCornersY = new float[wRCorners];
         //0
         wRCornersX[0] = -3*5;
         wRCornersY[0] = -6*5;
         //1
         wRCornersX[1] = -6*5;
-        wRCornersY[1] = -4*5;
+        wRCornersY[1] = -4.35*5;
         //2
         wRCornersX[2] = -4*5;
-        wRCornersY[2] = -4*5; 
+        wRCornersY[2] = -4.35*5; 
         myCenterX = 300;
         myCenterY = 300;
        //myCenterX = (int)(Math.random()*500);
        //myCenterY = (int)(Math.random()*500);
-       myDirectionX = 1;
-       myDirectionY = 1;
+       myDirectionX = 0;
+       myDirectionY = 0;
        myPointDirection = 0;
        //color intialization
        myColor = color(50,0,150);
