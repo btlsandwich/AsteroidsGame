@@ -1,6 +1,5 @@
 Spaceship Kaito;
 Star[] Platinum = new Star[100];
-Planet[] Maki = new Planet[3];
 public void setup() 
 {
   Kaito = new Spaceship();
@@ -8,10 +7,6 @@ public void setup()
   for (int s = 0; s < Platinum.length; s++)
   {
   	Platinum[s] = new Star();
-  }
-  for (int p = 0; p < Maki.length; p++)
-  {
-  	Maki[p] = new Planet();
   }
 }
 public void draw() 
@@ -21,13 +16,13 @@ public void draw()
   {
   	Platinum[s].show();
   }
-  Kaito.show();
+  Kaito.show(true);
   Kaito.move();
 }
 public void keyPressed()
 {
 	if(key == 'w')
-		{Kaito.accelerate(2);}
+		{Kaito.accelerate(2); Kaito.show(true);}
 	if(key == 's')
 		{Kaito.accelerate(-2);}
 	if(key == 'd')
@@ -41,7 +36,9 @@ public void keyPressed()
 		Kaito.accelerate(0);
 		Kaito.setDirectionX(0);
 		Kaito.setDirectionY(0);
-		// Platinum.setSX((int)(Math.random()*width));
-		// Platinum.setSY((int)(Math.random()*height));
+		for (int s = 0; s < Platinum.length; s++)
+		  {
+		  	Platinum[s] = new Star();
+		  }
 		}
 }

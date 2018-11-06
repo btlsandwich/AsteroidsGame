@@ -11,10 +11,10 @@ class Spaceship extends Floater
     public void setPointDirection(int degrees) { myPointDirection = degrees; }
     public double getPointDirection() { return myPointDirection; }
     //color variables
-    int myBaseColor, myWingColor, bCorners, cCorners, wLCorners, wRCorners;
+    int myBaseColor, myWingColor, bCorners, cCorners, wLCorners, wRCorners, eCorners;
     //indexes
     int[] baseCornersX, baseCornersY, cockpitCornersX, cockpitCornersY;
-    float[] wLCornersX, wLCornersY, wRCornersX, wRCornersY;
+    float[] wLCornersX, wLCornersY, wRCornersX, wRCornersY, eCornersX, eCornersY;
     Spaceship()
     {
       //makes body red, corners[] to myWingColor
@@ -147,8 +147,28 @@ class Spaceship extends Floater
         wRCornersY[2] = -4.35*5; 
         myCenterX = 300;
         myCenterY = 300;
-       //myCenterX = (int)(Math.random()*500);
-       //myCenterY = (int)(Math.random()*500);
+      //engine
+        eCorners = 6;
+        eCornersX = new float[eCorners];
+        eCornersY = new float[eCorners];
+        //0
+        eCornersX[0] = -6*5;
+        eCornersY[0] = 0*5;
+        //1
+        eCornersX[1] = -7*5;
+        eCornersY[1] = 1*5;
+        //2
+        eCornersX[2] = -8*5;
+        eCornersY[2] = 0.5*5;
+        //3
+        eCornersX[3] = 10*5;
+        eCornersY[3] = 0*5;
+        //4
+        eCornersX[4] = -8*5;
+        eCornersY[4] =-0.5*5;
+        //5
+        eCornersX[5] = -7*5;
+        eCornersY[5] = -1*5;
        myDirectionX = 0;
        myDirectionY = 0;
        myPointDirection = 0;
@@ -157,7 +177,7 @@ class Spaceship extends Floater
        myWingColor = color(215,0,0);
        myBaseColor = color(255,255,255);
     }
-    public void show()
+    public void show(boolean flame)
     {
       fill(myWingColor);
       stroke(myWingColor);
@@ -206,8 +226,20 @@ class Spaceship extends Floater
         vertex(cockpitCornersX[nK], cockpitCornersY[nK]);
       }
       endShape(CLOSE);
+      //flame 
+      if (flame == true)
+      {
+      fill(0,100,100);
+      stroke(0,80,80);
+      beginShape();
+      for (int nQ = 0; nQ < eCorners; nQ++)
+      {
+        vertex(eCornersX[nQ],eCornersY[nQ]);
+      endShape(CLOSE);
+      }
       //unpacking 
       rotate(-1*dRadians);
       translate(-1*(float)myCenterX, -1*(float)myCenterY);
-    }
+    }    
+  }
 }

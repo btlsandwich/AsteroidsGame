@@ -10,6 +10,7 @@ class Star //note that this class does NOT extend Floater
   }
   public void show()
   {
+  	stroke(255);
   	fill(255);
   	beginShape();
   		vertex(mySX+6,mySY);
