@@ -179,6 +179,18 @@ class Spaceship extends Floater
     }
     public void show(boolean flame)
     {
+      //flame 
+      if (flame == true)
+      {
+      fill(0,100,100);
+      stroke(0,80,80);
+      beginShape();
+      for (int nQ = 0; nQ < eCorners; nQ++)
+        {
+          vertex(eCornersX[nQ],eCornersY[nQ]);
+        }
+      endShape(CLOSE);
+      }
       fill(myWingColor);
       stroke(myWingColor);
       //set up commands
@@ -226,20 +238,9 @@ class Spaceship extends Floater
         vertex(cockpitCornersX[nK], cockpitCornersY[nK]);
       }
       endShape(CLOSE);
-      //flame 
-      if (flame == true)
-      {
-      fill(0,100,100);
-      stroke(0,80,80);
-      beginShape();
-      for (int nQ = 0; nQ < eCorners; nQ++)
-      {
-        vertex(eCornersX[nQ],eCornersY[nQ]);
-      endShape(CLOSE);
-      }
       //unpacking 
       rotate(-1*dRadians);
       translate(-1*(float)myCenterX, -1*(float)myCenterY);
     }    
   }
-}
+

@@ -16,7 +16,7 @@ public void draw()
   {
   	Platinum[s].show();
   }
-  Kaito.show(true);
+  Kaito.show(false);
   Kaito.move();
 }
 public void keyPressed()
