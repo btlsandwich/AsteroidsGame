@@ -145,29 +145,29 @@ class Spaceship extends Floater
         //2
         wRCornersX[2] = -4*5;
         wRCornersY[2] = -4.35*5; 
-        myCenterX = myCenterY = 350;
       //engine
         eCorners = 6;
         eCornersX = new float[eCorners];
         eCornersY = new float[eCorners];
         //0
-        eCornersX[0] = -6*5;
+        eCornersX[0] = -7*5;
         eCornersY[0] = 0*5;
         //1
-        eCornersX[1] = -7*5;
+        eCornersX[1] = -8*5;
         eCornersY[1] = 1*5;
         //2
-        eCornersX[2] = -8*5;
+        eCornersX[2] = -9*5;
         eCornersY[2] = 0.5*5;
         //3
-        eCornersX[3] = -10*5;
+        eCornersX[3] = -11*5;
         eCornersY[3] = 0*5;
         //4
-        eCornersX[4] = -8*5;
+        eCornersX[4] = -9*5;
         eCornersY[4] =-0.5*5;
         //5
-        eCornersX[5] = -7*5;
+        eCornersX[5] = -8*5;
         eCornersY[5] = -1*5;
+       myCenterX = myCenterY = height/2;
        myDirectionX = 0;
        myDirectionY = 0;
        myPointDirection = 0;
@@ -176,24 +176,24 @@ class Spaceship extends Floater
        myWingColor = color(215,0,0);
        myBaseColor = color(255,255,255);
     }
-    public void show(boolean flame)
+    public void show()
     {
       //set up commands
       translate((float)myCenterX, (float)myCenterY);
       float dRadians = (float)(myPointDirection*(Math.PI/180));
       rotate(dRadians);
-      //flame 
-      if (flame == true)
-      {
-      fill(62,245,222);
-      stroke(191,255,247);
-      beginShape();
-      for (int nQ = 0; nQ < eCorners; nQ++)
-        {
-          vertex(eCornersX[nQ],eCornersY[nQ]);
-        }
-      endShape(CLOSE);
-      }
+      ////flame 
+      //if (flame == true)
+      //{
+      //fill(62,245,222);
+      //stroke(191,255,247);
+      //beginShape();
+      //for (int nQ = 0; nQ < eCorners; nQ++)
+      //  {
+      //    vertex(eCornersX[nQ],eCornersY[nQ]);
+      //  }
+      //endShape(CLOSE);
+      //}
       //body (red)
       fill(myWingColor);
       stroke(myWingColor);
@@ -241,5 +241,25 @@ class Spaceship extends Floater
       rotate(-1*dRadians);
       translate(-1*(float)myCenterX, -1*(float)myCenterY);
     }    
+    public void engine (boolean flame)
+  {
+    //set up commands
+      translate((float)myCenterX, (float)myCenterY);
+      float dRadians = (float)(myPointDirection*(Math.PI/180));
+      rotate(dRadians);
+     if (flame == true)
+      {
+      fill(62,245,222);
+      stroke(191,255,247);
+      beginShape();
+      for (int nQ = 0; nQ < eCorners; nQ++)
+        {
+          vertex(eCornersX[nQ],eCornersY[nQ]);
+        }
+      endShape(CLOSE);
+      }
+     //unpacking 
+      rotate(-1*dRadians);
+      translate(-1*(float)myCenterX, -1*(float)myCenterY);
   }
-
+  }

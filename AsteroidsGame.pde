@@ -4,7 +4,7 @@ private boolean wPressed, sPressed, aPressed, dPressed;
 public void setup() 
 {
   Kaito = new Spaceship();
-  size(700,700);
+  size(900,900);
   for (int s = 0; s < Platinum.length; s++)
   {
   	Platinum[s] = new Star();
@@ -21,10 +21,10 @@ public void draw()
   {
   	Platinum[s].show();
   }
-  Kaito.show(false);
+  Kaito.show();
   Kaito.move();
   	if(wPressed == true)
-		{Kaito.accelerate(0.2); Kaito.show(true);}
+		{Kaito.accelerate(0.2); Kaito.engine(true);}
 	if(sPressed == true)
 		{Kaito.accelerate(-0.2);}
 	if(dPressed == true)
