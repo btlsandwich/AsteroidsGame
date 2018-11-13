@@ -182,18 +182,6 @@ class Spaceship extends Floater
       translate((float)myCenterX, (float)myCenterY);
       float dRadians = (float)(myPointDirection*(Math.PI/180));
       rotate(dRadians);
-      ////flame 
-      //if (flame == true)
-      //{
-      //fill(62,245,222);
-      //stroke(191,255,247);
-      //beginShape();
-      //for (int nQ = 0; nQ < eCorners; nQ++)
-      //  {
-      //    vertex(eCornersX[nQ],eCornersY[nQ]);
-      //  }
-      //endShape(CLOSE);
-      //}
       //body (red)
       fill(myWingColor);
       stroke(myWingColor);
@@ -203,7 +191,6 @@ class Spaceship extends Floater
         vertex(xCorners[nI], yCorners[nI]);
       }
       endShape(CLOSE);
-      // float dRadians = (float)(myPointDirection*(Math.PI/180));
       //body (white)
       fill(myBaseColor);
       stroke(myBaseColor);
@@ -227,7 +214,6 @@ class Spaceship extends Floater
         vertex(wRCornersX[nM], wRCornersY[nM]);
       }
       endShape(CLOSE);
-      // float dRadians = (float)(myPointDirection*(Math.PI/180));
       //body (blue)
       fill(myColor);
       stroke(myColor);
