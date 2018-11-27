@@ -1,6 +1,6 @@
 Spaceship Kaito;
 Star[] Platinum = new Star[100];
-Asteroid[] Kokichi = new Asteroid[1];
+Asteroid[] Kokichi = new Asteroid[20];
 private boolean wPressed, sPressed, aPressed, dPressed;
 public void setup() 
 {
@@ -25,6 +25,11 @@ public void draw()
   for (int s = 0; s < Platinum.length; s++)
   {
   	Platinum[s].show();
+  }
+  for (int q = 0; q < Kokichi.length; q++)
+  {
+  	Kokichi[q].show();
+  	Kokichi[q].move();
   }
   Kaito.show();
   Kaito.move();
