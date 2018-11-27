@@ -176,6 +176,15 @@ class Spaceship extends Floater
        myWingColor = color(215,0,0);
        myBaseColor = color(255,255,255);
     }
+    public void move()
+    {
+      if (myCenterX + myDirectionX > 0 && myCenterX + myDirectionX < width)
+        myCenterX+=myDirectionX;
+      if (myCenterY + myDirectionY > 0 && myCenterY + myDirectionY < height)
+        myCenterY+=myDirectionY;
+      myDirectionX = myDirectionX*0.97;
+      myDirectionY = myDirectionY*0.97;
+    }
     public void show()
     {
       //set up commands

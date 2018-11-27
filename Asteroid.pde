@@ -13,7 +13,7 @@ class Asteroid extends Floater
     private int myRSpeed, myColor2, myASize;
     Asteroid()
     {
-    	myASize = (int)(Math.random()*7)+3;
+    	myASize = (int)(Math.random()*5)+5;
     	corners = 7;
     	xCorners = new int[corners];
     	yCorners = new int[corners];
