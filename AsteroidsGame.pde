@@ -1,6 +1,6 @@
 Spaceship Kaito;
 Star[] Platinum = new Star[100];
-ArrayList <Asteroid> Dice = new ArrayList <Asteroid>();
+ArrayList <Asteroid> Kokichi = new ArrayList <Asteroid>();
 private boolean wPressed, sPressed, aPressed, dPressed;
 public void setup() 
 {
@@ -12,7 +12,11 @@ public void setup()
   }
   for (int z = 0; z < 15; z++)
   {
-  	Dice.add(new Asteroid());
+  	// if (Math.random() > 0.5)
+  	// 	Kokichi.setType(true);
+  	// else
+  	// 	Kokichi.setType(false);
+  	Kokichi.add(new Asteroid());
   }
   wPressed = false;
   sPressed = false;
@@ -28,8 +32,8 @@ public void draw()
   }
   for (int q = 0; q < 15; q++)
   {
-  	Dice.get(q).show();
-  	Dice.get(q).move();
+  	Kokichi.get(q).show();
+  	Kokichi.get(q).move();
   }
   Kaito.show();
   Kaito.move();
@@ -41,6 +45,12 @@ public void draw()
 		{Kaito.turn(4);}
 	if(aPressed == true)
 		{Kaito.turn(-4);}
+
+	for (int b : Kokichi) {
+		float d = dist(Kaito.getX(), Kaito.getY(), Kokichi.get(i).getX(), Kokichi.get(i).getY());
+	}
+	if (d < 20)
+		Kokichi.remove(i);
 }
 public void keyPressed()
 {
