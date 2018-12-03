@@ -10,9 +10,9 @@ class Asteroid extends Floater
     public double getDirectionY() { return myDirectionY; }
     public void setPointDirection(int degrees) { myPointDirection = degrees; }
     public double getPointDirection() { return myPointDirection; }
-    // public boolean setType(boolean t) {type1 = t;}
+    public void setType(boolean t) {type1 = t;}
     private int myRSpeed, myColor2, myASize;
-    public boolean type1; 
+    private boolean type1; 
     Asteroid()
     {
     	myASize = (int)(Math.random()*5)+5;
@@ -57,16 +57,16 @@ class Asteroid extends Floater
     }
     public void show ()  //Draws the floater at the current position  
 	  {             
-	    // if (type1 == true)
-	    // {
+	    if (type1 == true)
+	    {
 	    	fill(myColor);
 	    	stroke(myColor);
-	    // }	  
-	    // else
-	    // {
-	    // 	fill(myColor2);
-	    // 	stroke(myColor2);
-	    // }
+	    }	  
+	    else
+	    {
+	    	fill(myColor2);
+	     	stroke(myColor2);
+	     }
 	    //translate the (x,y) center of the ship to the correct position
 	    translate((float)myCenterX, (float)myCenterY);
 

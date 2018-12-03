@@ -10,13 +10,13 @@ public void setup()
   {
   	Platinum[s] = new Star();
   }
-  for (int z = 0; z < 15; z++)
+  for (int z = 0; z < 20; z++)
   {
-  	// if (Math.random() > 0.5)
-  	// 	Kokichi.setType(true);
-  	// else
-  	// 	Kokichi.setType(false);
   	Kokichi.add(new Asteroid());
+  	if (Math.random() < 0.5)
+  		Kokichi.get(z).setType(true);
+  	else
+  		Kokichi.get(z).setType(false);
   }
   wPressed = false;
   sPressed = false;
@@ -30,10 +30,16 @@ public void draw()
   {
   	Platinum[s].show();
   }
-  for (int q = 0; q < 15; q++)
+  for (int q = 0; q < Kokichi.size(); q++)
   {
   	Kokichi.get(q).show();
   	Kokichi.get(q).move();
+  	float d = dist(Kaito.getX(), Kaito.getY(), Kokichi.get(q).getX(), Kokichi.get(q).getY());
+	if (d < 30)
+	{
+		Kokichi.remove(q);
+		q--;
+	}
   }
   Kaito.show();
   Kaito.move();
@@ -45,12 +51,6 @@ public void draw()
 		{Kaito.turn(4);}
 	if(aPressed == true)
 		{Kaito.turn(-4);}
-
-	for (int b : Kokichi) {
-		float d = dist(Kaito.getX(), Kaito.getY(), Kokichi.get(i).getX(), Kokichi.get(i).getY());
-	}
-	if (d < 20)
-		Kokichi.remove(i);
 }
 public void keyPressed()
 {
