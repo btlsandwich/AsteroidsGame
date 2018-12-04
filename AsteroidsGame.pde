@@ -1,10 +1,11 @@
 Spaceship Kaito;
 Star[] Platinum = new Star[100];
 ArrayList <Asteroid> Kokichi = new ArrayList <Asteroid>();
-private boolean wPressed, sPressed, aPressed, dPressed;
+ArrayList <Bullet> Maki = new ArrayList <Bullet>();
+private boolean wPressed, sPressed, aPressed, dPressed, spacePressed;
 public void setup() 
 {
-  size(900,900);
+  size(1000,1000);
   Kaito = new Spaceship();
   for (int s = 0; s < Platinum.length; s++)
   {
@@ -18,10 +19,15 @@ public void setup()
   	else
   		Kokichi.get(z).setType(false);
   }
+  for (int m = 0; m < 1; m++)
+  {
+  	Maki.add(new Bullet());
+  }
   wPressed = false;
   sPressed = false;
   aPressed = false;
   dPressed = false; 
+  spacePressed = false;
 }
 public void draw() 	 
 {
@@ -39,6 +45,20 @@ public void draw()
 	{
 		Kokichi.remove(q);
 		q--;
+	}
+	if (Kokichi.size() == 0)
+		for (int z = 0; z < 20; z++)
+		  {
+		  	Kokichi.add(new Asteroid());
+		  	if (Math.random() < 0.5)
+		  		Kokichi.get(z).setType(true);
+		  	else
+		  		Kokichi.get(z).setType(false);
+		  }
+	for (int m = 0; m < Maki.size(); m++)
+	{
+		Maki.get(m).show();
+		Maki.get(m).move();
 	}
   }
   Kaito.show();
@@ -73,7 +93,17 @@ public void keyPressed()
 		  {
 		  	Platinum[s] = new Star();
 		  }
+		for (int u = 0; u < Kokichi.size(); u++)
+			{
+				Kokichi.get(u).setX((int)(Math.random()*1000));
+				Kokichi.get(u).setY((int)(Math.random()*1000));
+			}
 		}
+	if(key == ' ')
+	{
+		spacePressed = true;
+		Maki.add(new Bullet());
+	}
 }
 public void keyReleased()
 {
@@ -85,4 +115,6 @@ public void keyReleased()
 		{dPressed = false;}
 	if(key == 'a')
 		{aPressed = false;}
+	if(key == ' ')
+		{spacePressed = false;}
 }
