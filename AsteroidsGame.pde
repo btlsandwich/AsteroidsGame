@@ -19,10 +19,8 @@ public void setup()
   	else
   		Kokichi.get(z).setType(false);
   }
-  for (int m = 0; m < 1; m++)
-  {
-  	Maki.add(new Bullet());
-  }
+  	Maki.add(new Bullet(Kaito));
+  
   wPressed = false;
   sPressed = false;
   aPressed = false;
@@ -32,10 +30,12 @@ public void setup()
 public void draw() 	 
 {
   background(0);
+  //star
   for (int s = 0; s < Platinum.length; s++)
   {
   	Platinum[s].show();
   }
+  //asteroid
   for (int q = 0; q < Kokichi.size(); q++)
   {
   	Kokichi.get(q).show();
@@ -55,12 +55,15 @@ public void draw()
 		  	else
 		  		Kokichi.get(z).setType(false);
 		  }
-	for (int m = 0; m < Maki.size(); m++)
+	
+  	}
+  	//bullet
+  for (int m = 0; m < Maki.size(); m++)
 	{
 		Maki.get(m).show();
 		Maki.get(m).move();
 	}
-  }
+	//spaceship
   Kaito.show();
   Kaito.move();
   	if(wPressed == true)
@@ -102,7 +105,7 @@ public void keyPressed()
 	if(key == ' ')
 	{
 		spacePressed = true;
-		Maki.add(new Bullet());
+		Maki.add(new Bullet(Kaito));
 	}
 }
 public void keyReleased()
