@@ -37,7 +37,7 @@ class Bullet extends Floater
 	}
 	public void move ()   //move the floater in the current direction of travel
   {      
-    //change the x and y coordinates by myDirectionX and myDirectionY       
+    //change the x and y coordinates by myDirectionX and myDirectzionY       
     myCenterX += myDirectionX;    
     myCenterY += myDirectionY;     
 	// System.out.println(myCenterX + ", " + myCenterY);  

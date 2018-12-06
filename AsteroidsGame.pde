@@ -19,7 +19,7 @@ public void setup()
   	else
   		Kokichi.get(z).setType(false);
   }
-  	Maki.add(new Bullet(Kaito));
+  	//Maki.add(new Bullet(Kaito));
   
   wPressed = false;
   sPressed = false;
