@@ -19,7 +19,6 @@ public void setup()
   	else
   		Kokichi.get(z).setType(false);
   }
-  	//Maki.add(new Bullet(Kaito));
   
   wPressed = false;
   sPressed = false;
@@ -40,23 +39,20 @@ public void draw()
   {
   	Kokichi.get(q).show();
   	Kokichi.get(q).move();
-  	float d = dist(Kaito.getX(), Kaito.getY(), Kokichi.get(q).getX(), Kokichi.get(q).getY());
-	if (d < 30)
-	{
-		Kokichi.remove(q);
-		q--;
+  	for (int b = 0; b < Maki.size(); b++)
+  	{
+	  	float d = dist(Maki.get(b).getX(), 
+	  		Maki.get(b).getY(), 
+	  		Kokichi.get(q).getX(), 
+	  		Kokichi.get(q).getY());
+		if (d < 30)
+		{
+			Kokichi.remove(q);
+			//q--;
+			break;
+		}
 	}
-	if (Kokichi.size() == 0)
-		for (int z = 0; z < 20; z++)
-		  {
-		  	Kokichi.add(new Asteroid());
-		  	if (Math.random() < 0.5)
-		  		Kokichi.get(z).setType(true);
-		  	else
-		  		Kokichi.get(z).setType(false);
-		  }
-	
-  	}
+  }
   	//bullet
   for (int m = 0; m < Maki.size(); m++)
 	{
@@ -74,6 +70,17 @@ public void draw()
 		{Kaito.turn(4);}
 	if(aPressed == true)
 		{Kaito.turn(-4);}
+	//make more asteroids
+	if (Kokichi.size() == 0) {
+		for (int z = 0; z < 20; z++)
+		  {
+		  	Kokichi.add(new Asteroid());
+		  	if (Math.random() < 0.5)
+		  		Kokichi.get(z).setType(true);
+		  	else
+		  		Kokichi.get(z).setType(false);
+		  }
+	}
 }
 public void keyPressed()
 {
