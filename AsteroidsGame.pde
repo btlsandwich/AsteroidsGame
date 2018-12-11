@@ -3,15 +3,17 @@ Star[] Platinum = new Star[100];
 ArrayList <Asteroid> Kokichi = new ArrayList <Asteroid>();
 ArrayList <Bullet> Maki = new ArrayList <Bullet>();
 private boolean wPressed, sPressed, aPressed, dPressed, spacePressed;
+private int score;
 public void setup() 
 {
   size(1000,1000);
+  score = 0; 
   Kaito = new Spaceship();
   for (int s = 0; s < Platinum.length; s++)
   {
   	Platinum[s] = new Star();
   }
-  for (int z = 0; z < 20; z++)
+  for (int z = 0; z < 30; z++)
   {
   	Kokichi.add(new Asteroid());
   	if (Math.random() < 0.5)
@@ -48,7 +50,7 @@ public void draw()
 		if (d < 30)
 		{
 			Kokichi.remove(q);
-			//q--;
+			score++;
 			break;
 		}
 	}
@@ -81,6 +83,15 @@ public void draw()
 		  		Kokichi.get(z).setType(false);
 		  }
 	}
+	//hud
+	//System.out.println("Score :" + score);
+	fill(255,255,255,200);
+	rect(50,825,900,100,25);
+	fill(0);
+	textSize(19);
+	text("Score: " + score, 100,875);
+	fill(255,255,255,200);
+
 }
 public void keyPressed()
 {
@@ -107,6 +118,11 @@ public void keyPressed()
 			{
 				Kokichi.get(u).setX((int)(Math.random()*1000));
 				Kokichi.get(u).setY((int)(Math.random()*1000));
+			}
+		for (int t = 0; t < Maki.size(); t++)
+			{
+				Maki.remove(t);
+				t--;
 			}
 		}
 	if(key == ' ')
