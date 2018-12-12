@@ -3,11 +3,12 @@ Star[] Platinum = new Star[100];
 ArrayList <Asteroid> Kokichi = new ArrayList <Asteroid>();
 ArrayList <Bullet> Maki = new ArrayList <Bullet>();
 private boolean wPressed, sPressed, aPressed, dPressed, spacePressed;
-private int score;
+private int score, health;
 public void setup() 
 {
   size(1000,1000);
   score = 0; 
+  health = 50;
   Kaito = new Spaceship();
   for (int s = 0; s < Platinum.length; s++)
   {
@@ -50,9 +51,17 @@ public void draw()
 		if (d < 30)
 		{
 			Kokichi.remove(q);
+			Maki.remove(b);
 			score++;
 			break;
 		}
+	}
+	float dSpace = dist(Kaito.getX(),Kaito.getY(),Kokichi.get(q).getX(),Kokichi.get(q).getY());
+	if (dSpace < 30)
+	{
+		Kokichi.get(q).setX(Kaito.getX()+(int)(Math.random()*10)+10);
+		Kokichi.get(q).setY(Kaito.getY()+(int)(Math.random()*10)+10);
+		health-=5;
 	}
   }
   	//bullet

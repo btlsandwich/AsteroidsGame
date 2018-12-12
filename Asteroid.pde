@@ -11,6 +11,7 @@ class Asteroid extends Floater
     public void setPointDirection(int degrees) { myPointDirection = degrees; }
     public double getPointDirection() { return myPointDirection; }
     public void setType(boolean t) {type1 = t;}
+    public void setASize(int u) {myASize = u;}
     private int myRSpeed, myColor2, myASize;
     private boolean type1; 
     Asteroid()
