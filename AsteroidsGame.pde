@@ -55,14 +55,17 @@ public void draw()
 			score++;
 			break;
 		}
-	}
-	float dSpace = dist(Kaito.getX(),Kaito.getY(),Kokichi.get(q).getX(),Kokichi.get(q).getY());
-	if (dSpace < 30)
-	{
-		Kokichi.get(q).setX(Kaito.getX()+(int)(Math.random()*10)+10);
-		Kokichi.get(q).setY(Kaito.getY()+(int)(Math.random()*10)+10);
-		health-=5;
-	}
+  }
+    float dSpace = dist(Kaito.getX(),Kaito.getY(),Kokichi.get(q).getX(),Kokichi.get(q).getY());
+      if (dSpace < 30)
+      {
+        Kokichi.remove(q);
+        health-=5;
+      }
+      if (health <= 0)
+      {
+        
+      }
   }
   	//bullet
   for (int m = 0; m < Maki.size(); m++)
@@ -93,12 +96,17 @@ public void draw()
 		  }
 	}
 	//hud
-	//System.out.println("Score :" + score);
 	fill(255,255,255,200);
 	rect(50,825,900,100,25);
 	fill(0);
 	textSize(19);
 	text("Score: " + score, 100,875);
+  for (int i = 0; i < 10; i++)
+  {
+     fill(0,255,0);
+     rect(400,850,health,50);
+  }
+  text("Health: " + health, 500,875);
 	fill(255,255,255,200);
 
 }
