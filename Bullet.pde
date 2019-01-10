@@ -10,6 +10,7 @@ class Bullet extends Floater
     public double getDirectionY() { return myDirectionY; }
     public void setPointDirection(int degrees) { myPointDirection = degrees; }
     public double getPointDirection() { return myPointDirection; }
+    public boolean bulletalive;
 	Bullet(Spaceship theShip)
 	{
 		myCenterX = theShip.getX();
@@ -18,9 +19,14 @@ class Bullet extends Floater
 		double dRadians = myPointDirection*(Math.PI/180);
 		myDirectionX = 5*Math.cos(dRadians) + theShip.getDirectionX();
 		myDirectionY = 5*Math.sin(dRadians) + theShip.getDirectionY();
+		bulletalive = true;
+	}
+	public void bulletkill() {
+		
 	}
 	public void show()
 	{
+		if (bulletalive) {
 		fill(62,245,222);
 	    stroke(62,245,222);
 	    
@@ -34,6 +40,7 @@ class Bullet extends Floater
 	    //rotate so that the polygon will be drawn in the correct direction
 		rotate(-1*dRadians);
    		translate(-1*(float)myCenterX, -1*(float)myCenterY);
+   		}
 	}
 	public void move ()   //move the floater in the current direction of travel
   {      

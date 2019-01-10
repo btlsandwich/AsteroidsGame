@@ -38,7 +38,36 @@ public void draw()
   	Platinum[s].show();
   }
   //asteroid
-  for (int q = 0; q < Kokichi.size(); q++)
+  for(Asteroid tempasteroid : Kokichi){
+	tempasteroid.show();
+  	tempasteroid.move();
+  	for (Bullet tempbullet : Maki)
+  	{
+	  	float d = dist(tempbullet.getX(), 
+	  		tempbullet.getY(), 
+	  		tempasteroid.getX(), 
+	  		tempasteroid.getY());
+		if (d < 30)
+		{
+			tempasteroid.kill();
+			if(tempasteroid.getAlive()){
+			//tempbullet.();
+			}
+			score++;
+		}
+  }
+    float dSpace = dist(Kaito.getX(),Kaito.getY(),tempasteroid.getX(),tempasteroid.getY());
+      if (dSpace < 30)
+      {
+        tempasteroid.kill();
+        health-=5;
+      }
+      if (health <= 0)
+      {
+        
+      }
+  }
+  /*for (int q = 0; q < Kokichi.size(); q++)
   {
   	Kokichi.get(q).show();
   	Kokichi.get(q).move();
@@ -61,12 +90,13 @@ public void draw()
       {
         Kokichi.remove(q);
         health-=5;
+        break;
       }
       if (health <= 0)
       {
         
       }
-  }
+  }*/
   	//bullet
   for (int m = 0; m < Maki.size(); m++)
 	{

@@ -13,7 +13,7 @@ class Asteroid extends Floater
     public void setType(boolean t) {type1 = t;}
     public void setASize(int u) {myASize = u;}
     private int myRSpeed, myColor2, myASize;
-    private boolean type1; 
+    private boolean type1, alive; 
     Asteroid()
     {
     	myASize = (int)(Math.random()*5)+5;
@@ -50,14 +50,23 @@ class Asteroid extends Floater
     	myPointDirection = Math.random()*360;
     	myRSpeed = (int)(Math.random()*5)-2;
     	type1 = true;
+    	alive = true;
     }
     public void move()
     {
 	   super.move();
 	   myPointDirection += myRSpeed;
     }
+    public void kill(){
+    	Asteroid();
+    	//alive = false;
+    }
+    public boolean getAlive(){
+    	return alive;
+    }
     public void show ()  //Draws the floater at the current position  
-	  {             
+	  {     
+	  if(alive){       
 	    if (type1 == true)
 	    {
 	    	fill(myColor);
@@ -88,4 +97,5 @@ class Asteroid extends Floater
 	    rotate(-1*dRadians);
 	    translate(-1*(float)myCenterX, -1*(float)myCenterY);
 	  }   
+	}
 }
