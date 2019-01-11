@@ -58,8 +58,7 @@ class Asteroid extends Floater
 	   myPointDirection += myRSpeed;
     }
     public void kill(){
-    	Asteroid();
-    	//alive = false;
+    	alive = false;
     }
     public boolean getAlive(){
     	return alive;

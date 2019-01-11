@@ -22,7 +22,7 @@ class Bullet extends Floater
 		bulletalive = true;
 	}
 	public void bulletkill() {
-		
+		bulletalive = false;
 	}
 	public void show()
 	{

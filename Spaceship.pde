@@ -22,151 +22,151 @@ class Spaceship extends Floater
        xCorners = new int[corners];
        yCorners = new int[corners];
        //0
-       xCorners[0] = 5*5;
-       yCorners[0] = 0*5;
+       xCorners[0] = 5*4;
+       yCorners[0] = 0*4;
        //1
-       xCorners[1] = 0*5;
-       yCorners[1] = 2*5;
+       xCorners[1] = 0*4;
+       yCorners[1] = 2*4;
        //2
-       xCorners[2] = 1*5;
-       yCorners[2] = 3*5;
+       xCorners[2] = 1*4;
+       yCorners[2] = 3*4;
        //3
-       xCorners[3] = -4*5;
-       yCorners[3] = 4*5;
+       xCorners[3] = -4*4;
+       yCorners[3] = 4*4;
        //4
-       xCorners[4] = -3*5;
-       yCorners[4] = 6*5;
+       xCorners[4] = -3*4;
+       yCorners[4] = 6*4;
        //5
-       xCorners[5] = -6*5;
-       yCorners[5] = 4*5;
+       xCorners[5] = -6*4;
+       yCorners[5] = 4*4;
        //6
-       xCorners[6] = -3*5;
-       yCorners[6] = 2*5;
+       xCorners[6] = -3*4;
+       yCorners[6] = 2*4;
        //7
-       xCorners[7] = -6*5;
-       yCorners[7] = 1*5;
+       xCorners[7] = -6*4;
+       yCorners[7] = 1*4;
        //8
-       xCorners[8] = -5*5;
-       yCorners[8] = 0*5;
+       xCorners[8] = -5*4;
+       yCorners[8] = 0*4;
        //9
-       xCorners[9] = -6*5;
-       yCorners[9] = -1*5;
+       xCorners[9] = -6*4;
+       yCorners[9] = -1*4;
        //10
-       xCorners[10] = -3*5;
-       yCorners[10] = -2*5;
+       xCorners[10] = -3*4;
+       yCorners[10] = -2*4;
        //11
-       xCorners[11] = -6*5;
-       yCorners[11] = -4*5;
+       xCorners[11] = -6*4;
+       yCorners[11] = -4*4;
        //12
-       xCorners[12] = -3*5;
-       yCorners[12] = -6*5;
+       xCorners[12] = -3*4;
+       yCorners[12] = -6*4;
        //13
-       xCorners[13] = -4*5;
-       yCorners[13] = -4*5;
+       xCorners[13] = -4*4;
+       yCorners[13] = -4*4;
        //14
-       xCorners[14] = 1*5;
-       yCorners[14] = -3*5;
+       xCorners[14] = 1*4;
+       yCorners[14] = -3*4;
        //15
-       xCorners[15] = 0*5;
-       yCorners[15] = -2*5;
+       xCorners[15] = 0*4;
+       yCorners[15] = -2*4;
       //makes body white, baseCorners[] to myBaseColor
         bCorners = 8;
         baseCornersX = new int[bCorners];
         baseCornersY = new int[bCorners];
         //0
-        baseCornersX[0] = 5*5;
-        baseCornersY[0] = 0*5;
+        baseCornersX[0] = 5*4;
+        baseCornersY[0] = 0*4;
         //1
-        baseCornersX[1] = 0*5;
-        baseCornersY[1] = 2*5;
+        baseCornersX[1] = 0*4;
+        baseCornersY[1] = 2*4;
         //2
-        baseCornersX[2] = 1*5;
-        baseCornersY[2] = 3*5;
+        baseCornersX[2] = 1*4;
+        baseCornersY[2] = 3*4;
         //3
-        baseCornersX[3] = -6*5;
-        baseCornersY[3] = 1*5;
+        baseCornersX[3] = -6*4;
+        baseCornersY[3] = 1*4;
         //4
-        baseCornersX[4] = -5*5;
-        baseCornersY[4] = 0*5;
+        baseCornersX[4] = -5*4;
+        baseCornersY[4] = 0*4;
         //5
-        baseCornersX[5] = -6*5;
-        baseCornersY[5] = -1*5;
+        baseCornersX[5] = -6*4;
+        baseCornersY[5] = -1*4;
         //6
-        baseCornersX[6] = 1*5;
-        baseCornersY[6] = -3*5;
+        baseCornersX[6] = 1*4;
+        baseCornersY[6] = -3*4;
         //7
-        baseCornersX[7] = 0*5;
-        baseCornersY[7] = -2*5;
+        baseCornersX[7] = 0*4;
+        baseCornersY[7] = -2*4;
       //makes body blue, cockpitCorners[] to myColor
         cCorners = 6;
         cockpitCornersX = new int[cCorners];
         cockpitCornersY = new int[cCorners];
         //0
-        cockpitCornersX[0] = 2*5;
-        cockpitCornersY[0] = 0*5;
+        cockpitCornersX[0] = 2*4;
+        cockpitCornersY[0] = 0*4;
         //1
-        cockpitCornersX[1] = 0*5;
-        cockpitCornersY[1] = 1*5;
+        cockpitCornersX[1] = 0*4;
+        cockpitCornersY[1] = 1*4;
         //2
-        cockpitCornersX[2] = -2*5;
-        cockpitCornersY[2] = 1*5;
+        cockpitCornersX[2] = -2*4;
+        cockpitCornersY[2] = 1*4;
         //3
-        cockpitCornersX[3] = -4*5;
-        cockpitCornersY[3] = 0*5;
+        cockpitCornersX[3] = -4*4;
+        cockpitCornersY[3] = 0*4;
         //4
-        cockpitCornersX[4] = -2*5;
-        cockpitCornersY[4] = -1*5;
+        cockpitCornersX[4] = -2*4;
+        cockpitCornersY[4] = -1*4;
         //5
-        cockpitCornersX[5] = 0*5;
-        cockpitCornersY[5] = -1*5;
+        cockpitCornersX[5] = 0*4;
+        cockpitCornersY[5] = -1*4;
       //left wing
         wLCorners = 3;
         wLCornersX = new float[wLCorners];
         wLCornersY = new float[wLCorners];
         //0
-        wLCornersX[0] = -3*5;
-        wLCornersY[0] = 6*5;
+        wLCornersX[0] = -3*4;
+        wLCornersY[0] = 6*4;
         //1
-        wLCornersX[1] = -6*5;
-        wLCornersY[1] = 4.35*5;
+        wLCornersX[1] = -6*4;
+        wLCornersY[1] = 4.35*4;
         //2
-        wLCornersX[2] = -4*5;
-        wLCornersY[2] = 4.35*5;
+        wLCornersX[2] = -4*4;
+        wLCornersY[2] = 4.35*4;
       //right wing
         wRCorners = 3;
         wRCornersX = new float[wRCorners];
         wRCornersY = new float[wRCorners];
         //0
-        wRCornersX[0] = -3*5;
-        wRCornersY[0] = -6*5;
+        wRCornersX[0] = -3*4;
+        wRCornersY[0] = -6*4;
         //1
-        wRCornersX[1] = -6*5;
-        wRCornersY[1] = -4.35*5;
+        wRCornersX[1] = -6*4;
+        wRCornersY[1] = -4.35*4;
         //2
-        wRCornersX[2] = -4*5;
-        wRCornersY[2] = -4.35*5; 
+        wRCornersX[2] = -4*4;
+        wRCornersY[2] = -4.35*4;
       //engine
         eCorners = 6;
         eCornersX = new float[eCorners];
         eCornersY = new float[eCorners];
         //0
-        eCornersX[0] = -7*5;
-        eCornersY[0] = 0*5;
+        eCornersX[0] = -7*4;
+        eCornersY[0] = 0*4;
         //1
-        eCornersX[1] = -8*5;
-        eCornersY[1] = 1*5;
+        eCornersX[1] = -8*4;
+        eCornersY[1] = 1*4;
         //2
-        eCornersX[2] = -9*5;
-        eCornersY[2] = 0.5*5;
+        eCornersX[2] = -9*4;
+        eCornersY[2] = 0.5*4;
         //3
-        eCornersX[3] = -11*5;
-        eCornersY[3] = 0*5;
+        eCornersX[3] = -11*4;
+        eCornersY[3] = 0*4;
         //4
-        eCornersX[4] = -9*5;
-        eCornersY[4] =-0.5*5;
+        eCornersX[4] = -9*4;
+        eCornersY[4] =-0.5*4;
         //5
-        eCornersX[5] = -8*5;
-        eCornersY[5] = -1*5;
+        eCornersX[5] = -8*4;
+        eCornersY[5] = -1*4;
        myCenterX = myCenterY = 500;
        myDirectionX = 0;
        myDirectionY = 0;

@@ -38,7 +38,7 @@ public void draw()
   	Platinum[s].show();
   }
   //asteroid
-  for(Asteroid tempasteroid : Kokichi){
+  /*for(Asteroid tempasteroid : Kokichi){
 	tempasteroid.show();
   	tempasteroid.move();
   	for (Bullet tempbullet : Maki)
@@ -50,6 +50,7 @@ public void draw()
 		if (d < 30)
 		{
 			tempasteroid.kill();
+			tempbullet.bulletkill();
 			if(tempasteroid.getAlive()){
 			//tempbullet.();
 			}
@@ -66,26 +67,26 @@ public void draw()
       {
         
       }
-  }
-  /*for (int q = 0; q < Kokichi.size(); q++)
+  }*/
+  for (int q = 0; q < Kokichi.size(); q++)
   {
   	Kokichi.get(q).show();
   	Kokichi.get(q).move();
   	for (int b = 0; b < Maki.size(); b++)
   	{
-	  	float d = dist(Maki.get(b).getX(), 
-	  		Maki.get(b).getY(), 
-	  		Kokichi.get(q).getX(), 
-	  		Kokichi.get(q).getY());
+  		//between bullet and asteroid
+	  	float d = dist(Maki.get(b).getX(), Maki.get(b).getY(), Kokichi.get(q).getX(), Kokichi.get(q).getY());
 		if (d < 30)
 		{
 			Kokichi.remove(q);
 			Maki.remove(b);
+			//Kokichi.get(q).kill();
+			//Maki.get(b).bulletkill();
 			score++;
 			break;
 		}
-  }
-    float dSpace = dist(Kaito.getX(),Kaito.getY(),Kokichi.get(q).getX(),Kokichi.get(q).getY());
+	//between spaceship and asteroid
+	float dSpace = dist(Kaito.getX(),Kaito.getY(),Kokichi.get(q).getX(),Kokichi.get(q).getY());
       if (dSpace < 30)
       {
         Kokichi.remove(q);
@@ -94,9 +95,9 @@ public void draw()
       }
       if (health <= 0)
       {
-        
       }
-  }*/
+    }
+  }
   	//bullet
   for (int m = 0; m < Maki.size(); m++)
 	{
